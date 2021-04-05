@@ -15,10 +15,6 @@ namespace JewelleryStore.Application.Price.Validator
             RuleFor(x => x.Weight)
                 .GreaterThanOrEqualTo(0)
                 .WithMessage(ErrorMessage.InvalidInput);
-
-            RuleFor(x => x.DiscountPercentage)
-                .InclusiveBetween(0, 100)
-                .WithMessage(ErrorMessage.InvalidInput);
         }
     }
 }

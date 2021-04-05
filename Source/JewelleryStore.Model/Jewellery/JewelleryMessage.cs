@@ -11,10 +11,5 @@
         /// Weight per gram.
         /// </summary>
         public double Weight { get; set; }
-
-        /// <summary>
-        /// Discount percentage.
-        /// </summary>
-        public double DiscountPercentage { get; set; }
     }
 }
