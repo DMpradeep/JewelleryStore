@@ -34,8 +34,16 @@ steps:
   inputs:
     command: 'publish'
     publishWebProjects: true
-    arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+    arguments: '--configuration $(BuildConfiguration) --output $(Build.SourcesDirectory)/output'
     modifyOutputPath: false
+
+- task: ArchiveFiles@2
+  displayName: "Archive the files for publish"
+  inputs:
+    rootFolderOrFile: $(Build.SourcesDirectory)/output
+    archiveType: zip
+    archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildNumber).zip
+    includeRootFolder: false
  
 - task: PublishBuildArtifacts@1
   displayName: "Publish artifact"
