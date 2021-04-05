@@ -40,6 +40,6 @@ steps:
 - task: PublishBuildArtifacts@1
   displayName: "Publish artifact"
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/$(Build.BuildNumber).zip'
     ArtifactName: 'drop'
     publishLocation: 'Container'
