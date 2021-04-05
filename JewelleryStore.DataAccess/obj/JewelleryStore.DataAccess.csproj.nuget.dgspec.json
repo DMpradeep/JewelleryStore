@@ -1,0 +1,217 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\WS\\Siemens\\JewelleryStore.Api\\JewelleryStore.DataAccess\\JewelleryStore.DataAccess.csproj": {}
+  },
+  "projects": {
+    "C:\\WS\\Siemens\\JewelleryStore.Api\\JewelleryStore.Application\\JewelleryStore.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\WS\\Siemens\\JewelleryStore.Api\\JewelleryStore.Application\\JewelleryStore.Application.csproj",
+        "projectName": "JewelleryStore.Application",
+        "projectPath": "C:\\WS\\Siemens\\JewelleryStore.Api\\JewelleryStore.Application\\JewelleryStore.Application.csproj",
+        "packagesPath": "C:\\Users\\PradeepMahadevaswamy\\.nuget\\packages\\",
+        "outputPath": "C:\\WS\\Siemens\\JewelleryStore.Api\\JewelleryStore.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PradeepMahadevaswamy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/proarc/_packaging/PA-Nuget/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\WS\\Siemens\\JewelleryStore.Api\\JewelleryStore.Model\\JewelleryStore.Model.csproj": {
+                "projectPath": "C:\\WS\\Siemens\\JewelleryStore.Api\\JewelleryStore.Model\\JewelleryStore.Model.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[9.5.3, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\WS\\Siemens\\JewelleryStore.Api\\JewelleryStore.DataAccess\\JewelleryStore.DataAccess.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\WS\\Siemens\\JewelleryStore.Api\\JewelleryStore.DataAccess\\JewelleryStore.DataAccess.csproj",
+        "projectName": "JewelleryStore.DataAccess",
+        "projectPath": "C:\\WS\\Siemens\\JewelleryStore.Api\\JewelleryStore.DataAccess\\JewelleryStore.DataAccess.csproj",
+        "packagesPath": "C:\\Users\\PradeepMahadevaswamy\\.nuget\\packages\\",
+        "outputPath": "C:\\WS\\Siemens\\JewelleryStore.Api\\JewelleryStore.DataAccess\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PradeepMahadevaswamy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/proarc/_packaging/PA-Nuget/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\WS\\Siemens\\JewelleryStore.Api\\JewelleryStore.Application\\JewelleryStore.Application.csproj": {
+                "projectPath": "C:\\WS\\Siemens\\JewelleryStore.Api\\JewelleryStore.Application\\JewelleryStore.Application.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.78, )"
+            },
+            "Microsoft.Extensions.Options": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "System.Data.SQLite.Core": {
+              "target": "Package",
+              "version": "[1.0.113.7, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\WS\\Siemens\\JewelleryStore.Api\\JewelleryStore.Model\\JewelleryStore.Model.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\WS\\Siemens\\JewelleryStore.Api\\JewelleryStore.Model\\JewelleryStore.Model.csproj",
+        "projectName": "JewelleryStore.Model",
+        "projectPath": "C:\\WS\\Siemens\\JewelleryStore.Api\\JewelleryStore.Model\\JewelleryStore.Model.csproj",
+        "packagesPath": "C:\\Users\\PradeepMahadevaswamy\\.nuget\\packages\\",
+        "outputPath": "C:\\WS\\Siemens\\JewelleryStore.Api\\JewelleryStore.Model\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PradeepMahadevaswamy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/proarc/_packaging/PA-Nuget/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30626.31
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{21F5101C-9EEF-49B1-AB7F-DD5D4F54629A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JewelleryStore.Application", "JewelleryStore.Application\JewelleryStore.Application.csproj", "{8AA71202-C275-4E28-BDCC-49F4D3311A60}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JewelleryStore.Api", "JewelleryStore.Api\JewelleryStore.Api.csproj", "{F4C832D3-8216-46C0-B295-DFCD529DA017}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{0F251965-6FC3-4612-A1AE-92BE61BCDE13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JewelleryStore.Model", "JewelleryStore.Model\JewelleryStore.Model.csproj", "{5A49E067-0E74-4EBD-A001-76835D537932}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JewelleryStore.DataAccess", "JewelleryStore.DataAccess\JewelleryStore.DataAccess.csproj", "{11467D74-2968-4666-8A73-06CE36DD5A42}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8AA71202-C275-4E28-BDCC-49F4D3311A60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AA71202-C275-4E28-BDCC-49F4D3311A60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AA71202-C275-4E28-BDCC-49F4D3311A60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AA71202-C275-4E28-BDCC-49F4D3311A60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4C832D3-8216-46C0-B295-DFCD529DA017}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4C832D3-8216-46C0-B295-DFCD529DA017}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4C832D3-8216-46C0-B295-DFCD529DA017}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4C832D3-8216-46C0-B295-DFCD529DA017}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A49E067-0E74-4EBD-A001-76835D537932}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A49E067-0E74-4EBD-A001-76835D537932}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A49E067-0E74-4EBD-A001-76835D537932}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A49E067-0E74-4EBD-A001-76835D537932}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11467D74-2968-4666-8A73-06CE36DD5A42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11467D74-2968-4666-8A73-06CE36DD5A42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11467D74-2968-4666-8A73-06CE36DD5A42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11467D74-2968-4666-8A73-06CE36DD5A42}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8AA71202-C275-4E28-BDCC-49F4D3311A60} = {21F5101C-9EEF-49B1-AB7F-DD5D4F54629A}
+		{5A49E067-0E74-4EBD-A001-76835D537932} = {0F251965-6FC3-4612-A1AE-92BE61BCDE13}
+		{11467D74-2968-4666-8A73-06CE36DD5A42} = {21F5101C-9EEF-49B1-AB7F-DD5D4F54629A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CD601B93-789E-4AF8-8BC1-4B3E0F6E44DB}
+	EndGlobalSection
+EndGlobal

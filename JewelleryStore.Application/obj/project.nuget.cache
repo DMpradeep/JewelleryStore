@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "OY0m/FTBwkOwSj3P8GueLIHVeDOp6s472dTT6m2DnWxE+BqUWrN6SmqAKXV3r8shLrIsKnFDxQZI/yuigfItMQ==",
+  "success": true,
+  "projectFilePath": "C:\\WS\\Siemens\\JewelleryStore.Api\\JewelleryStore.Application\\JewelleryStore.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\PradeepMahadevaswamy\\.nuget\\packages\\fluentvalidation\\9.5.3\\fluentvalidation.9.5.3.nupkg.sha512",
+    "C:\\Users\\PradeepMahadevaswamy\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,15 @@
+C:\WS\Siemens\JewelleryStore.Api\JewelleryStore.Application\bin\Debug\net5.0\JewelleryStore.Application.deps.json
+C:\WS\Siemens\JewelleryStore.Api\JewelleryStore.Application\bin\Debug\net5.0\JewelleryStore.Application.dll
+C:\WS\Siemens\JewelleryStore.Api\JewelleryStore.Application\bin\Debug\net5.0\ref\JewelleryStore.Application.dll
+C:\WS\Siemens\JewelleryStore.Api\JewelleryStore.Application\bin\Debug\net5.0\JewelleryStore.Application.pdb
+C:\WS\Siemens\JewelleryStore.Api\JewelleryStore.Application\bin\Debug\net5.0\JewelleryStore.Model.dll
+C:\WS\Siemens\JewelleryStore.Api\JewelleryStore.Application\bin\Debug\net5.0\JewelleryStore.Model.pdb
+C:\WS\Siemens\JewelleryStore.Api\JewelleryStore.Application\obj\Debug\net5.0\JewelleryStore.Application.csprojAssemblyReference.cache
+C:\WS\Siemens\JewelleryStore.Api\JewelleryStore.Application\obj\Debug\net5.0\JewelleryStore.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\WS\Siemens\JewelleryStore.Api\JewelleryStore.Application\obj\Debug\net5.0\JewelleryStore.Application.AssemblyInfoInputs.cache
+C:\WS\Siemens\JewelleryStore.Api\JewelleryStore.Application\obj\Debug\net5.0\JewelleryStore.Application.AssemblyInfo.cs
+C:\WS\Siemens\JewelleryStore.Api\JewelleryStore.Application\obj\Debug\net5.0\JewelleryStore.Application.csproj.CoreCompileInputs.cache
+C:\WS\Siemens\JewelleryStore.Api\JewelleryStore.Application\obj\Debug\net5.0\JewelleryStore.Application.csproj.CopyComplete
+C:\WS\Siemens\JewelleryStore.Api\JewelleryStore.Application\obj\Debug\net5.0\JewelleryStore.Application.dll
+C:\WS\Siemens\JewelleryStore.Api\JewelleryStore.Application\obj\Debug\net5.0\ref\JewelleryStore.Application.dll
+C:\WS\Siemens\JewelleryStore.Api\JewelleryStore.Application\obj\Debug\net5.0\JewelleryStore.Application.pdb
