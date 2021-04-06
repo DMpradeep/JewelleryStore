@@ -1,4 +1,3 @@
-using JewelleryStore.Api.Authorization;
 using JewelleryStore.Api.Filters;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
@@ -32,7 +31,6 @@ namespace JewelleryStore.Api
 
             services
               .AddCors()
-              .AddCustomAuthorizationPolicy()
               .AddMvc(options =>
               {
                   options.Filters.Add(typeof(CustomExceptionFilterAttribute));
