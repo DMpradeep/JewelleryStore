@@ -1,4 +1,6 @@
 ﻿using FluentValidation;
+using JewelleryStore.Api.Authentication;
+using JewelleryStore.Application.Common;
 using JewelleryStore.Application.Price.Validator;
 using JewelleryStore.Application.User;
 using JewelleryStore.Application.User.Validator;
@@ -8,7 +10,6 @@ using JewelleryStore.Model.Jewellery;
 using JewelleryStore.Model.User;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
 
 namespace JewelleryStore.Api
 {
@@ -35,6 +36,7 @@ namespace JewelleryStore.Api
 
         private static void InfrastructureDependecy(IServiceCollection services, IConfiguration configuration)
         {
+            services.AddSingleton<IUserContext, UserContext>();
             services.Configure<DbSetting>(configuration.GetSection("DbConnection"));
         }
     }
