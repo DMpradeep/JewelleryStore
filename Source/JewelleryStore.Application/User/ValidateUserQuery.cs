@@ -1,5 +1,4 @@
 ﻿using FluentValidation;
-using JewelleryStore.Application.Exceptions;
 using JewelleryStore.Model.Resources;
 using JewelleryStore.Model.User;
 using MediatR;
@@ -8,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace JewelleryStore.Application.User
 {
-    public class ValidateUserQuery : UserAuthenticationMessage, IRequest<int> { }
+    public class ValidateUserQuery : UserAuthenticationMessage, IRequest<(bool isValidUser, int userRno)> { }
 
-    public class ValidateUserQueryHandler : IRequestHandler<ValidateUserQuery, int>
+    public class ValidateUserQueryHandler : IRequestHandler<ValidateUserQuery, (bool isValidUser, int userRno)>
     {
         private readonly IUserDataAccess _dataAccess;
         private readonly AbstractValidator<UserAuthenticationMessage> _messageValidator;
@@ -21,23 +20,18 @@ namespace JewelleryStore.Application.User
             _messageValidator = messageValidator;
         }
 
-        public async Task<int> Handle(ValidateUserQuery request, CancellationToken cancellationToken)
+        public async Task<(bool isValidUser, int userRno)> Handle(ValidateUserQuery request, CancellationToken cancellationToken)
         {
             await ValidateUserAuthenticationMessageRequest(request, cancellationToken);
 
             var message = await _dataAccess.GetUserAuthenticationMessageAsync(request.Id);
-            if (message == null)
+
+            if (message != null)
             {
-                throw new NotFoundException(nameof(UserAuthenticationMessage), request.Id);
+                return (message.Id == request.Id && message.Password == request.Password, message.Rno);
             }
 
-            //compare hashes and move to helper class
-            if (message.Password != request.Password)
-            {
-                throw new UserInputException("Invalid password");
-            }
-
-            return message.Rno;
+            return (false, 0);
         }
 
         private async Task ValidateUserAuthenticationMessageRequest(ValidateUserQuery request, CancellationToken cancellationToken)
