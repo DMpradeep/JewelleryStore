@@ -9,7 +9,7 @@ namespace JewelleryStore.Api.Controllers
     [ApiController]
     public class TokenController : BaseController
     {
-        [Route("token")]
+        [Route("token", Name = RouteConstants.ValidateUser)]
         [HttpPost]
         public async Task<TokenMessage> Create([FromBody] ValidateUserQuery message)
         {

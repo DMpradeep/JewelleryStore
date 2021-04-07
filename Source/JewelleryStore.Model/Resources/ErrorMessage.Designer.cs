@@ -70,6 +70,15 @@ namespace JewelleryStore.Model.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invalid UserId and Password combination.
+        /// </summary>
+        public static string InvalidUserIdPassword {
+            get {
+                return ResourceManager.GetString("InvalidUserIdPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {PropertyName} is required.
         /// </summary>
         public static string MissingInfo {

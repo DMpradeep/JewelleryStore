@@ -1,5 +1,7 @@
 ﻿using JewelleryStore.Application.Common;
 using JewelleryStore.Model.Common;
+using JewelleryStore.Model.Configuration;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
@@ -11,6 +13,11 @@ namespace JewelleryStore.Api.Authentication
 {
     public class TokenGenerator : ITokenGenerator
     {
+        private readonly IOptions<AuthenticationSetting> _config;
+
+        public TokenGenerator(IOptions<AuthenticationSetting> config)
+            => _config = config;
+
         public TokenMessage GenerateToken(int userRno, string userId)
         {
             var claims = new List<Claim>()
@@ -24,7 +31,7 @@ namespace JewelleryStore.Api.Authentication
             var token = new JwtSecurityToken(
                 new JwtHeader(
                     new SigningCredentials(
-                        new SymmetricSecurityKey(Encoding.UTF8.GetBytes("JewelleryStoreSecret")),
+                        new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config.Value.SymmetricSecurityKey)),
                         SecurityAlgorithms.HmacSha256)),
                 new JwtPayload(claims));
 

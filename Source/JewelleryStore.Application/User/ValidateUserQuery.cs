@@ -38,7 +38,7 @@ namespace JewelleryStore.Application.User
                 return _tokenGenerator.GenerateToken(message.Rno, message.Id);
             }
 
-            throw new UserInputException("Invalid userId or passsword");
+            throw new UserInputException(ErrorMessage.InvalidUserIdPassword);
         }
 
         private async Task ValidateUserAuthenticationMessageRequest(ValidateUserQuery request, CancellationToken cancellationToken)

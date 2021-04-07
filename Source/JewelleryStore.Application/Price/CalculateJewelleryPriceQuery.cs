@@ -3,6 +3,7 @@ using JewelleryStore.Application.Common;
 using JewelleryStore.Application.User;
 using JewelleryStore.Model.Jewellery;
 using JewelleryStore.Model.Resources;
+using JewelleryStore.Model.User;
 using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
@@ -27,13 +28,7 @@ namespace JewelleryStore.Application.Price
         public async Task<double> Handle(CalculateJewelleryPriceQuery request, CancellationToken cancellationToken)
         {
             await ValidateJewelleryMessageRequest(request, cancellationToken);
-
-            var userMessage = await _userDataAccess.DetailsAsync(_userContext.UserRno);
-
-            var totalPrice = request.Price * request.Weight;
-            var discount = totalPrice * ((double)userMessage.DiscountPercentage / 100);
-
-            return totalPrice - discount;
+            return await GetTotalPrice(request);
         }
 
         private async Task ValidateJewelleryMessageRequest(CalculateJewelleryPriceQuery request, CancellationToken cancellationToken)
@@ -44,6 +39,21 @@ namespace JewelleryStore.Application.Price
             {
                 throw new ValidationException(string.Format(ErrorMessage.ValidationError, CommonMessage.Jewellery), result.Errors);
             }
+        }
+
+        private async Task<double> GetTotalPrice(CalculateJewelleryPriceQuery request)
+        {
+            var userMessage = await _userDataAccess.DetailsAsync(_userContext.UserRno);
+
+            var totalPrice = request.Price * request.Weight;
+
+            if (userMessage.Type == UserType.PrivilegedUser)
+            {
+                var discount = totalPrice * ((double)userMessage.DiscountPercentage / 100);
+                return totalPrice - discount;
+            }
+
+            return totalPrice;
         }
     }
 }

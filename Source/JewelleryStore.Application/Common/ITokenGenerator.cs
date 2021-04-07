@@ -4,6 +4,6 @@ namespace JewelleryStore.Application.Common
 {
     public interface ITokenGenerator
     {
-        public TokenMessage GenerateToken(int userRno, string username);
+        public TokenMessage GenerateToken(int userRno, string userId);
     }
 }

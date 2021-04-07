@@ -60,25 +60,28 @@ namespace JewelleryStore.Api
             ConfigureAuth(services);
         }
 
-        private static void ConfigureAuth(IServiceCollection services)
+        private void ConfigureAuth(IServiceCollection services)
         {
+            var authSchemeName = "JwtBearer";
+            var symmetricSecurityKey = Configuration["Authentication:SymmetricSecurityKey"];
+
             services.AddAuthentication(options =>
-            {
-                options.DefaultAuthenticateScheme = "JwtBearer";
-                options.DefaultChallengeScheme = "JwtBearer";
-            })
-            .AddJwtBearer("JwtBearer", jwtBeareOptions =>
-            {
-                jwtBeareOptions.TokenValidationParameters = new TokenValidationParameters()
                 {
-                    ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("JewelleryStoreSecret")),
-                    ValidateIssuer = false,
-                    ValidateAudience = false,
-                    ValidateLifetime = true,
-                    ClockSkew = TimeSpan.FromMinutes(5)
-                };
-            });
+                    options.DefaultAuthenticateScheme = authSchemeName;
+                    options.DefaultChallengeScheme = authSchemeName;
+                })
+                .AddJwtBearer(authSchemeName, jwtBeareOptions =>
+                {
+                    jwtBeareOptions.TokenValidationParameters = new TokenValidationParameters()
+                    {
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(symmetricSecurityKey)),
+                        ValidateIssuer = false,
+                        ValidateAudience = false,
+                        ValidateLifetime = true,
+                        ClockSkew = TimeSpan.FromMinutes(5)
+                    };
+                });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -89,7 +92,8 @@ namespace JewelleryStore.Api
             app.UseSwaggerUI(c => c.SwaggerEndpoint("./v2/swagger.json", "Jewellery REST API"));
 
             app.UseRouting();
-            app.UseCors(builder => builder.AllowAnyMethod().AllowAnyOrigin().AllowAnyHeader());
+            app.UseCors(
+                builder => builder.WithOrigins(Configuration["Authentication:CorsOrigin"]).AllowAnyMethod().AllowAnyHeader());
             app.UseHttpsRedirection();
             app.UseAuthentication();
             app.UseAuthorization();

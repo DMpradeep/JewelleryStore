@@ -120,6 +120,9 @@
   <data name="InvalidInput" xml:space="preserve">
     <value>'{PropertyValue}' is invalid for {PropertyName}.</value>
   </data>
+  <data name="InvalidUserIdPassword" xml:space="preserve">
+    <value>Invalid UserId and Password combination</value>
+  </data>
   <data name="MissingInfo" xml:space="preserve">
     <value>{PropertyName} is required</value>
   </data>

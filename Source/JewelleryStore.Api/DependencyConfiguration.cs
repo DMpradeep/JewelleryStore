@@ -25,7 +25,6 @@ namespace JewelleryStore.Api
         private static void UserDepedencies(IServiceCollection services)
         {
             services.AddScoped<IUserDataAccess, UserDataAccess>();
-            services.AddScoped<UserDetailsProvider>();
         }
 
         private static void ValidatorDependencies(IServiceCollection services)
@@ -39,6 +38,7 @@ namespace JewelleryStore.Api
             services.AddScoped<ITokenGenerator, TokenGenerator>();
             services.AddSingleton<IUserContext, UserContext>();
             services.Configure<DbSetting>(configuration.GetSection("DbConnection"));
+            services.Configure<AuthenticationSetting>(configuration.GetSection("Authentication"));
         }
     }
 }
