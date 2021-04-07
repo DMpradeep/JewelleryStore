@@ -36,6 +36,7 @@ namespace JewelleryStore.Api
 
         private static void InfrastructureDependecy(IServiceCollection services, IConfiguration configuration)
         {
+            services.AddScoped<ITokenGenerator, TokenGenerator>();
             services.AddSingleton<IUserContext, UserContext>();
             services.Configure<DbSetting>(configuration.GetSection("DbConnection"));
         }
