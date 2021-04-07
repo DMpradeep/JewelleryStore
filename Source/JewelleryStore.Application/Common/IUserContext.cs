@@ -4,6 +4,6 @@
     {
         public int UserRno { get; }
 
-        public string Username { get; }
+        public string UserId { get; }
     }
 }

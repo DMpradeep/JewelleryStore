@@ -1,4 +1,7 @@
 ﻿using FluentValidation;
+using JewelleryStore.Application.Common;
+using JewelleryStore.Application.Exceptions;
+using JewelleryStore.Model.Common;
 using JewelleryStore.Model.Resources;
 using JewelleryStore.Model.User;
 using MediatR;
@@ -7,31 +10,35 @@ using System.Threading.Tasks;
 
 namespace JewelleryStore.Application.User
 {
-    public class ValidateUserQuery : UserAuthenticationMessage, IRequest<(bool isValidUser, int userRno)> { }
+    public class ValidateUserQuery : UserAuthenticationMessage, IRequest<TokenMessage> { }
 
-    public class ValidateUserQueryHandler : IRequestHandler<ValidateUserQuery, (bool isValidUser, int userRno)>
+    public class ValidateUserQueryHandler : IRequestHandler<ValidateUserQuery, TokenMessage>
     {
         private readonly IUserDataAccess _dataAccess;
         private readonly AbstractValidator<UserAuthenticationMessage> _messageValidator;
+        private readonly ITokenGenerator _tokenGenerator;
 
-        public ValidateUserQueryHandler(IUserDataAccess dataAccess, AbstractValidator<UserAuthenticationMessage> messageValidator)
+        public ValidateUserQueryHandler(AbstractValidator<UserAuthenticationMessage> messageValidator, IUserDataAccess dataAccess, ITokenGenerator tokenGenerator)
         {
             _dataAccess = dataAccess;
             _messageValidator = messageValidator;
+            _tokenGenerator = tokenGenerator;
         }
 
-        public async Task<(bool isValidUser, int userRno)> Handle(ValidateUserQuery request, CancellationToken cancellationToken)
+        public async Task<TokenMessage> Handle(ValidateUserQuery request, CancellationToken cancellationToken)
         {
             await ValidateUserAuthenticationMessageRequest(request, cancellationToken);
 
             var message = await _dataAccess.GetUserAuthenticationMessageAsync(request.Id);
+            var isValidUser = message != null &&
+                (message.Id == request.Id && message.Password == request.Password);
 
-            if (message != null)
+            if (isValidUser)
             {
-                return (message.Id == request.Id && message.Password == request.Password, message.Rno);
+                return _tokenGenerator.GenerateToken(message.Rno, message.Id);
             }
 
-            return (false, 0);
+            throw new UserInputException(ErrorMessage.InvalidUserIdPassword);
         }
 
         private async Task ValidateUserAuthenticationMessageRequest(ValidateUserQuery request, CancellationToken cancellationToken)

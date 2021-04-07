@@ -13,14 +13,14 @@ namespace JewelleryStore.Application.User
 
     public class UserDetailsQueryHandler : IRequestHandler<UserDetailsQuery, UserMessage>
     {
-        private readonly UserDetailsProvider _userDetailsProvider;
+        private readonly IUserDataAccess _dataAccess;
 
-        public UserDetailsQueryHandler(UserDetailsProvider userDetailsProvider)
-            => _userDetailsProvider = userDetailsProvider;
+        public UserDetailsQueryHandler(IUserDataAccess dataAccess)
+            => _dataAccess = dataAccess;
 
         public async Task<UserMessage> Handle(UserDetailsQuery request, CancellationToken cancellationToken)
         {
-            var result = await _userDetailsProvider.DetailsAsync(request.UserRno);
+            var result = await _dataAccess.DetailsAsync(request.UserRno);
 
             if (result == null)
             {
@@ -29,14 +29,5 @@ namespace JewelleryStore.Application.User
 
             return result;
         }
-    }
-
-    public class UserDetailsProvider
-    {
-        private readonly IUserDataAccess _dataAccess;
-
-        public UserDetailsProvider(IUserDataAccess dataAccess) => _dataAccess = dataAccess;
-
-        public async Task<UserMessage> DetailsAsync(int userRno) => await _dataAccess.DetailsAsync(userRno);
     }
 }

@@ -16,6 +16,6 @@ namespace JewelleryStore.Api.Authentication
 
         public int UserRno => Convert.ToInt32(_httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value);
 
-        public string Username => _httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.Name).Value;
+        public string UserId => _httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.Name).Value;
     }
 }
