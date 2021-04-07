@@ -30,6 +30,13 @@ steps:
     configuration: '$(buildConfiguration)'
 
 - task: DotNetCoreCLI@2
+  displayName: 'Run unit test'
+  inputs:
+    command: 'test'
+    projects: '**/*Test*.csproj'
+
+
+- task: DotNetCoreCLI@2
   displayName: "Publish api"
   inputs:
     command: 'publish'
