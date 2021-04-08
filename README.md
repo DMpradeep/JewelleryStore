@@ -31,8 +31,10 @@ FluentValidator: To validate messages / models sent to rest api.
 https://github.com/FluentValidation/FluentValidation  
 
 # Deployement
-CI : Configured corresponding Azure Devops pipeline. Link - https://dmpradeep.visualstudio.com/JewelleryStore/_build?definitionId=4  
-CD : Configured corresponding Azure Devops release to deploy the api to "Azure App Service". Link - https://dmpradeep.visualstudio.com/JewelleryStore/_release?_a=releases&view=mine&definitionId=1  
+1. CI : Configured corresponding Azure Devops pipeline. 
+Link - https://dmpradeep.visualstudio.com/JewelleryStore/_build?definitionId=4  
+2. CD : Configured corresponding Azure Devops release to deploy the api to "Azure App Service". 
+Link - https://dmpradeep.visualstudio.com/JewelleryStore/_release?_a=releases&view=mine&definitionId=1  
 
 # @Todo  
 1. Add integration tests (Will add it by April 8th EOD)
